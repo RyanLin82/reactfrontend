@@ -1,9 +1,9 @@
 import React from 'react';
 
-const statelessComponentProject = () => (
+const statelessComponentProject = (props) => (
 	<div>
-		<p>ICCT</p>
-		<p>CM</p>
+		<p>{props.project1}</p>
+		<p>{props.project2}</p>
 	</div>
 );
 

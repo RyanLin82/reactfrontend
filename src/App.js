@@ -3,11 +3,11 @@ import './App.css';
 import StatelessComponentProject from './Component/Project/statelessComponentProject';
 class App extends React.Component {
   render(){
-
   	return (
 	    <div className="App">
-	      <p>ICCT</p>
-	      <p>CM</p>
+	      <StatelessComponentProject 
+	      	project1 = "ICCT" 
+	      	project2 = "CM"/>
 	    </div>
   	);
   }
@@ -29,5 +29,5 @@ export default App;
 // 	</div>
 // 	);
 //	{projects}
-	      
+
 
