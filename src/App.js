@@ -1,13 +1,11 @@
 import React from 'react';
 import './App.css';
-import StatelessComponentProject from './Component/Project/statelessComponentProject';
+import ClassProjects from './Component/Project/ClassProject';
 class App extends React.Component {
   render(){
   	return (
 	    <div className="App">
-	      <StatelessComponentProject 
-	      	project1 = "ICCT" 
-	      	project2 = "CM"/>
+	    	<ClassProjects />
 	    </div>
   	);
   }

@@ -1,9 +1,10 @@
 import React from 'react';
 
 const statelessComponentProject = (props) => (
-	<div>
-		<p>{props.project1}</p>
-		<p>{props.project2}</p>
+	<div onClick = {props.onClick}>
+		<p> ProjectName: {props.ProjectName}</p>
+		<p> TeamLead: {props.TeamLead}</p>
+		<p> MemberNum: {props.MemberNum}</p>
 	</div>
 );
 
