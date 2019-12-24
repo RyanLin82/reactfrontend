@@ -9,10 +9,10 @@ class Tier1 extends React.Component {
         };
         console.log("[Tier1] constructor", props, this.state);
       }
-    static getDerivedStateFromProps(props, state) {
-        console.log("[Tier1 getDerivedStateFromProps]", props, state);
-        return {teamLead: props.teamLead };
-    }  
+    componentDidMount(){
+        this.setState({teamLead:"Ryan"});
+        console.log("[Tier1 componentDidMount]", this.state);
+    }
     render(){
         const { teamLead, show } = this.state;
         console.log("[Tier1] render Tier1", this.props, this.state);
@@ -28,3 +28,9 @@ class Tier1 extends React.Component {
 }
 
 export default Tier1;
+
+
+ // static getDerivedStateFromProps(props, state) {
+    //     console.log("[Tier1 getDerivedStateFromProps]", props, state);
+    //     return {teamLead: props.teamLead };
+    // }
