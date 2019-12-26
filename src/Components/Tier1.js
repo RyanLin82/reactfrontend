@@ -10,14 +10,20 @@ class Tier1 extends React.Component {
         console.log("[Tier1] constructor", props, this.state);
       }
     
-    // static getDerivedStateFromProps(props, state) {
-    //     console.log("[Tier1 getDerivedStateFromProps]", props, state);
-    //     return {teamLead: "Eunice" };
-    // }
+    getSnapshotBeforeUpdate(prevProps, prevState) {
+        console.log("[Tier1] getSnapshotBeforeUpdate", this.props, prevProps, prevState, this.state);
+        document.getElementById("snapshot").innerHTML =
+        "getSnapshotBeforeUpdate";
+        return "getSnapshotBeforeUpdate data";
+    }
+    componentDidUpdate(prevProps, prevState, snapshot) {
+        document.getElementById("componentDidUpdate").innerHTML = "componentDidUpdate";
+        console.log("[Tier1 componentDidUpdate]", this.props, prevProps, prevState, this.state, snapshot);
+    }
 
     shouldComponentUpdate(){
         console.log("[Tier1 shouldComponentUpdate]");
-        return false;
+        return true;
     }
     componentDidMount(){
         this.setState({teamLead:"Ryan"});

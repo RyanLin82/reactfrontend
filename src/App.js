@@ -5,6 +5,8 @@ class App extends React.Component {
     return (
       <div className="App">
         <Tier1 teamLead = "Jean"/>
+        <div id = "snapshot"></div>
+        <div id = "componentDidUpdate"></div>
       </div>
     );
   }
