@@ -3,7 +3,7 @@ import {withRouter} from 'react-router-dom';
 import IcctMember from './IcctMember';
 
 const icct = (props) => {
-	console.log("icct", props);
+	console.log("[ICCT]", props);
 	return (
 		<div>
 			<h1> ICCT Good </h1>

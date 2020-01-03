@@ -8,7 +8,7 @@ class IcctMember extends React.Component {
 	}
 
 	render(){
-		console.log("IcctMember", this.props);
+		console.log("[IcctMember]", this.props);
 		return(
 			<div>
 				<h1>Jean</h1>
@@ -20,4 +20,5 @@ class IcctMember extends React.Component {
 	
 }
 
+// export default IcctMember;
 export default withRouter(IcctMember);

@@ -1,5 +1,4 @@
 import React from 'react';
-import {withRouter} from 'react-router-dom';
 import CMMember from './CMMember';
 
 class CM extends React.Component{
@@ -9,8 +8,6 @@ class CM extends React.Component{
 	}
 
 	memberButton = () => {
-
-
 		const isShowMember = !this.state.isShowMember;
 		this.setState({isShowMember:isShowMember});
 		console.log("memberButton",this.state);
@@ -25,15 +22,13 @@ class CM extends React.Component{
 	}
 
 	render(){
-		console.log('I was triggered during render');
-		console.log("test",this.props);
+		console.log("[CM]",this.props);
 		let showMember = null;
 		if(this.state.isShowMember){
 			showMember = (<div>
 				<CMMember />
 			</div>);
 		}
-		console.log("showMember", showMember);
 		return (
 			<div>
 				<h1> Claim master good2 </h1>

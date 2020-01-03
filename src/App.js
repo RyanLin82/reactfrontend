@@ -4,7 +4,7 @@ import {Route, Switch, Link} from 'react-router-dom';
 import ICCT from './Components/ICCT';
 import CM from './Components/CM';
 import Intro from './Components/Intro';
-import MemberList from './Components/Intro';
+import MemberList from './Components/MemberList';
 
 class App extends React.Component{
   render(){
