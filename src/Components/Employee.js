@@ -36,18 +36,30 @@ class Employee extends React.Component{
     getData = () => {
         axios.get("/employee.json")
         .then(res => {
-            console.log("[getData", res);
+            console.log("[getData]", res);
             let addEmployee = this.state.Employee;
             let data = res.data;
 
             for(let employee in data){
                 addEmployee = [...addEmployee, data[employee]];
             }
-
-            console.log("[getSuccess]", addEmployee);
-            this.setState({Employee:addEmployee});
+            // this.setState({Employee:addEmployee});
         })
         console.log("[getData] finish");
+    }
+
+    getAsyncData = async () => {
+        await axios.get("/employee.json")
+        .then(res => {
+            console.log("[getAsyncData]", res);
+            let addEmployee = this.state.Employee;
+            let data = res.data;
+
+            for(let employee in data){
+                addEmployee = [...addEmployee, data[employee]];
+            }
+        })
+        console.log("[getAsyncData] finish");
     }
 
     errorButton = () => {
@@ -125,6 +137,7 @@ class Employee extends React.Component{
                     <input type = "button" onClick = {this.submitForm} value = "save"/>
                 </form>
                 <button onClick= {this.getData}> get </button>
+                <button onClick= {this.getAsyncData}> AsyncGet </button>
                 <button onClick= {this.errorButton}> error </button>
                 {empleyeeUI}
                 
