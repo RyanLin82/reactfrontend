@@ -18,7 +18,7 @@ class Employee extends React.Component{
         }
     }
     submitForm = () => {
-        console.log(this.state.formData);
+        console.log("[submitForm]", this.state.formData);
 
         axios.post("/employee.json", this.state.formData)
         .then(respone => console.log("[submitForm response]", respone))
@@ -36,11 +36,9 @@ class Employee extends React.Component{
     getData = () => {
         axios.get("/employee.json")
         .then(res => {
-            // alert("test");
-            console.log(res);
+            console.log("[getData", res);
             let addEmployee = this.state.Employee;
             let data = res.data;
-            console.log("[getSuccess]", data);
 
             for(let employee in data){
                 addEmployee = [...addEmployee, data[employee]];
@@ -49,6 +47,29 @@ class Employee extends React.Component{
             console.log("[getSuccess]", addEmployee);
             this.setState({Employee:addEmployee});
         })
+        console.log("[getData] finish");
+    }
+
+    errorButton = () => {
+        // axios({
+        //     method: 'post',
+        //     url: 'http://sss/666employee.json',
+        //     responseType: 'json'
+        //   })
+        //     .then(function (response) {
+        //       console.log("[errorButton]", response);
+        // });
+
+        axios.post("http:/555/tessss1234",this.formData)
+        .then( response => {
+            console.log("[errorButton]", response);
+        })
+        .catch( error => {
+            console.log("[errorButton catch]", error.toJSON());
+        })
+        .finally( () =>{
+            console.log("[errorButton finally]");
+        });
     }
 
     nameOnChange = (event) => {
@@ -104,6 +125,7 @@ class Employee extends React.Component{
                     <input type = "button" onClick = {this.submitForm} value = "save"/>
                 </form>
                 <button onClick= {this.getData}> get </button>
+                <button onClick= {this.errorButton}> error </button>
                 {empleyeeUI}
                 
             </div>
