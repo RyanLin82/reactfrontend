@@ -4,6 +4,12 @@ import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 
+import axios from 'axios';
+
+// axios.defaults.baseURL = 'https://icctreact.firebaseio.com/';
+// axios.defaults.headers.common['Authorization'] = 'AUTH_TOKEN';
+
+
 ReactDOM.render(<App />, document.getElementById('root'));
 
 // If you want your app to work offline and load faster, you can change

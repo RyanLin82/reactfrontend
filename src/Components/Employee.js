@@ -1,5 +1,6 @@
 import React from 'react';
-import axios from 'axios'
+// import axios from 'axios';
+import axios from '../axios';
 
 class Employee extends React.Component{
     state = {
@@ -19,7 +20,7 @@ class Employee extends React.Component{
     submitForm = () => {
         console.log(this.state.formData);
 
-        axios.post("https://icctreact.firebaseio.com/employee.json", this.state.formData)
+        axios.post("/employee.json", this.state.formData)
         .then(respone => console.log("[submitForm response]", respone))
         .catch(error => console.log(error));
 
@@ -33,7 +34,7 @@ class Employee extends React.Component{
     }
     
     getData = () => {
-        axios.get("https://icctreact.firebaseio.com/employee.json")
+        axios.get("/employee.json")
         .then(res => {
             // alert("test");
             console.log(res);
