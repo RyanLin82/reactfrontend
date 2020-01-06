@@ -1,7 +1,7 @@
 import React from 'react';
 // import axios from 'axios';
 import axios from '../axios';
-
+import * as EmployeeAxios from '../EmployeeAxios';
 class Employee extends React.Component{
     state = {
         Employee:[
@@ -20,7 +20,11 @@ class Employee extends React.Component{
     submitForm = () => {
         console.log("[submitForm]", this.state.formData);
 
-        axios.post("/employee.json", this.state.formData)
+        // axios.post("/employee.json", this.state.formData)
+        // .then(respone => console.log("[submitForm response]", respone))
+        // .catch(error => console.log(error));
+
+        EmployeeAxios.post(this.state.formData)
         .then(respone => console.log("[submitForm response]", respone))
         .catch(error => console.log(error));
 
@@ -34,7 +38,19 @@ class Employee extends React.Component{
     }
     
     getData = () => {
-        axios.get("/employee.json")
+        // axios.get("/employee.json")
+        // .then(res => {
+        //     console.log("[getData]", res);
+        //     let addEmployee = this.state.Employee;
+        //     let data = res.data;
+
+        //     for(let employee in data){
+        //         addEmployee = [...addEmployee, data[employee]];
+        //     }
+        //     // this.setState({Employee:addEmployee});
+        // });
+
+        EmployeeAxios.getAll()
         .then(res => {
             console.log("[getData]", res);
             let addEmployee = this.state.Employee;
@@ -44,7 +60,7 @@ class Employee extends React.Component{
                 addEmployee = [...addEmployee, data[employee]];
             }
             // this.setState({Employee:addEmployee});
-        })
+        });
         console.log("[getData] finish");
     }
 
