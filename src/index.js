@@ -5,10 +5,19 @@ import App from './App';
 import * as serviceWorker from './serviceWorker';
 
 import { Provider } from 'react-redux';
-import { createStore } from 'redux';
-import calculateSalary from './store/reducers/calculateSalary';
+import { createStore, combineReducers } from 'redux';
+import calculateSalaryReducer from './store/reducers/calculateSalary';
+import teamReducer from './store/reducers/team';
 
-const store = createStore(calculateSalary, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__());
+const rootReducer = combineReducers({
+    team: teamReducer,
+    calculateSalary: calculateSalaryReducer
+});
+
+
+const store = createStore(rootReducer
+    , window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__());
+
 const app = (
     <Provider store = {store}>
         <App/>

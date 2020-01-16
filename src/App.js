@@ -1,6 +1,7 @@
 import React from 'react';
 import EmployeeContainer from './Container/EmployeeContainer';
 import CalculateSalary from './Components/CalculateSalary';
+import TeamUI from './Components/TeamUI';
 
 class App extends React.Component {
   render(){
@@ -8,6 +9,7 @@ class App extends React.Component {
       <div>
         {/* <EmployeeContainer /> */}
         <CalculateSalary />
+        <TeamUI />
       </div>
     );
   }
